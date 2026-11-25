@@ -19,4 +19,6 @@ const menu = [
   { id: 16, name: "Ice Ice Array", category: "Kalla drycker", price: 44, vegetarian: true, rating: 4.2, allergens: ["laktos"] },
   { id: 17, name: "Booleanbubbel", category: "Kalla drycker", price: 29, vegetarian: true, rating: 3.5, allergens: [] },
   { id: 18, name: "Lemon Loop", category: "Kalla drycker", price: 33, vegetarian: true, rating: 4.4, allergens: [] },
+  { id: 19, name: "Test-kaka", category: "Bakverk", price: 40, vegetarian: true, rating: 4.4, allergens: [] },
 ];
+

@@ -24,7 +24,7 @@ function createMenuCard(item) {
 
   li.append(category, name, price, rating);
 
-  if (item.vegetarian = true) {
+  if (item.vegetarian === true) {
     const badge = document.createElement("span");
     badge.classList.add("badge", "badge-veg");
     badge.textContent = "Vegetarisk";
@@ -52,12 +52,35 @@ function renderMenu(items) {
   });
 }
 
-// Fyller dropdownen #category-filter med kategorierna från menyn
 function populateCategories() {
+
+  // Skapar en tom array för unika kategorier
+  const categories = [];
+
+  // Går igenom alla produkter i menyn
   menu.forEach((item) => {
+
+    // Kontrollerar om kategorin inte redan finns
+    if (!categories.includes(item.category)) {
+
+      // Lägger till kategorin i arrayen
+      categories.push(item.category);
+    }
+  });
+
+  // Går igenom alla unika kategorier
+  categories.forEach((category) => {
+
+    // Skapar ett alternativ i dropdownen
     const option = document.createElement("option");
-    option.value = item.category;
-    option.textContent = item.category;
+
+    // Tilldelar alternativet ett värde
+    option.value = category;
+
+    // Bestämmer vilken text som visas
+    option.textContent = category;
+
+    // Lägger till alternativet i dropdownen
     categoryFilter.append(option);
   });
 }
