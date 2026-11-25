@@ -42,6 +42,14 @@ function renderOrder() {
     total = total + item.price;
   });
 
+  const emptyOrder = document.createElement("p");
+
+    if (total === 0) {
+      emptyOrder.textContent = "Din beställning är tom – lägg till något gott från menyn!";
+    };
+  
+  orderList.append(emptyOrder);
+
   orderTotal.textContent = "Totalt: " + total + " kr";
 }
 
