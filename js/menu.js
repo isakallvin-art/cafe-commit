@@ -31,6 +31,13 @@ function createMenuCard(item) {
     li.append(badge);
   }
 
+  if (item.rating >= 4.5){
+const badge = document.createElement("span");
+  badge.classList.add("badge", "badge-popular");
+  badge.textContent = "Populär";
+  li.append(badge);
+}
+
   const button = document.createElement("button");
   button.classList.add("button", "button-small");
   button.textContent = "Lägg till";
@@ -40,6 +47,7 @@ function createMenuCard(item) {
   li.append(button);
 
   return li;
+  
 }
 
 // Ritar upp alla rätter som finns i arrayen items
