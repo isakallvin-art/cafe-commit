@@ -55,5 +55,9 @@ function renderOrder() {
 }
 
 placeOrderButton.addEventListener("click", () => {
+  if (order.length ===0) {
+    orderMessage.textContent = "Din beställning är tom";
+    return;
+  }
   orderMessage.textContent = "Tack för din beställning!";
 });
