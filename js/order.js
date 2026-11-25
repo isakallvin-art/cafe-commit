@@ -53,11 +53,19 @@ function renderOrder() {
 
   orderTotal.textContent = "Totalt: " + total + " kr";
 }
-
+function getOrderTotal() {
+  return order.reduce((sum, item) => sum + item.price, 0);
+}
 placeOrderButton.addEventListener("click", () => {
   if (order.length ===0) {
     orderMessage.textContent = "Din beställning är tom";
     return;
   }
-  orderMessage.textContent = "Tack för din beställning!";
+  const vald = document.querySelector('input[name="serving"]:checked');
+  const serving = vald ? vald.value : "Äta här";
+  const total = getOrderTotal();
+
+  orderMessage.textContent = `Tack! Din beställning (${serving}) på ${total} kr är mottagen.`;
+  order.length = 0;
+  renderOrder();
 });
