@@ -3,7 +3,9 @@
 function getVisibleItems() {
   // En kopia av menyn, så att originalet aldrig ändras
   let items = [...menu];
-
+  if (categoryFilter.value !== "alla") {
+    items = items.filter((item) => item.category === categoryFilter.value);
+  }
   return items;
 }
 
@@ -12,3 +14,5 @@ function updateMenu() {
   const items = getVisibleItems();
   renderMenu(items);
 }
+
+categoryFilter.addEventListener("change", updateMenu);
