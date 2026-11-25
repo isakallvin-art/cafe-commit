@@ -224,3 +224,8 @@ h3 {
 .form-error {
   color: var(--color-error);
 }
+
+.badge-popular {
+    background-color: #fef3c7;
+    color: #92400e;
+}
